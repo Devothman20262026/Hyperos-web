@@ -1,10 +1,19 @@
-import { PhoneFrame } from './system/PhoneFrame';
-import './styles/system.css';
+Enterimport { useState } from 'react'
+import LockScreen from './system/LockScreen'
+import HomeScreen from './system/HomeScreen'
+import RecentApps from './system/RecentApps'
 
 export default function App() {
+  const [locked, setLocked] = useState(true)
+  const [recent, setRecent] = useState(false)
+
   return (
-    <PhoneFrame>
-      {/* هنا النظام كامل */}
-    </PhoneFrame>
-  );
+    <div className="phone">
+      <div className="screen">
+        {locked && <LockScreen onUnlock={() => setLocked(false)} />}
+        {!locked && !recent && <HomeScreen openRecent={() => setRecent(true)} />}
+        {recent && <RecentApps close={() => setRecent(false)} />}
+      </div>
+    </div>
+  )
 }

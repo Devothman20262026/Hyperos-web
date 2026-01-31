@@ -1,4 +1,4 @@
-export default function RecentApps({ close }: { close: () => void }) {
+Enterexport default function RecentApps({ close }: { close: () => void }) {
   return (
     <div className="recent">
       <div className="card">Settings</div>

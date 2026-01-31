@@ -1,4 +1,4 @@
-export default function HomeScreen({ openRecent }: { openRecent: () => void }) {
+hereexport default function HomeScreen({ openRecent }: { openRecent: () => void }) {
   return (
     <div className="home">
       <div className="apps">
